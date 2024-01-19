@@ -1,0 +1,31 @@
+
+
+.login-background{
+    background: -webkit-linear-gradient(left,#80bcf5,#4c82e0);
+    border: 1px solid red;
+    height: 100vh;
+    .login-container {
+        background-color: white;
+        width: 400px;
+        margin:auto;
+        border-radius: 10px;
+        padding: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 450px;
+        .login-content{
+            padding: 10px;
+            .login-input{
+                margin: 7px 0px;
+            }
+            .btn-signin{
+                width: 100%;
+                margin: 10px auto;
+            }
+        }
+        
+    }
+}

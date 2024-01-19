@@ -1,0 +1,19 @@
+.Modal-container{
+    .form-row{
+        display: flex;
+        .form-group{
+            padding: 10px;
+        }
+    }
+    
+}
+.modal-content{
+    .modal-header{
+        button{
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 30px;
+        }
+    }
+}
