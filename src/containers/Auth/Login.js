@@ -59,13 +59,13 @@ class Login extends Component {
                                 <h1 style={{ textAlign: 'center' }}>Sign in</h1>
                             </div>
                             <form>
-                                <div class="col-12 form-group login-input">
+                                <div className="col-12 form-group login-input">
                                     <input value={this.state.userName} onChange={(event) => this.handleOnChangeInput(event)}
                                         name='userName'
                                         type="email" className="form-control" placeholder='Enter your email' />
                                     <label className="form-label">Email address</label>
                                 </div>
-                                <div class="col-12 form-group login-input">
+                                <div className="col-12 form-group login-input">
                                     <input value={this.state.password} onChange={(event) => this.handleOnChangeInput(event)}
                                         name='password'
                                         type="password" className="form-control" placeholder='Enter your password' />
@@ -78,27 +78,27 @@ class Login extends Component {
                                     onClick={() => this.handleLogin()}
                                 >Sign in</button>
                                 <div className="col-12">
-                                    <div className="col" style={{ margin: '5px' }}>
+                                    <div className="col" style={{ margin: '5px', textAlign: 'center' }}>
                                         <a href="#!">Forgot password?</a>
                                     </div>
                                 </div>
-                                <div class="text-center ">
+                                <div className="text-center ">
                                     <p>Not a member? <a href="#!">Register</a></p>
                                     <p>or sign up with:</p>
                                     <div className='sign-other'>
-                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <button type="button" className="btn btn-link btn-floating mx-1">
                                             <i className="fab fa-facebook-f"></i>
                                         </button>
 
-                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <button type="button" className="btn btn-link btn-floating mx-1">
                                             <i className="fab fa-google"></i>
                                         </button>
 
-                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <button type="button" className="btn btn-link btn-floating mx-1">
                                             <i className="fab fa-twitter"></i>
                                         </button>
 
-                                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                        <button type="button" className="btn btn-link btn-floating mx-1">
                                             <i className="fab fa-github"></i>
                                         </button>
                                     </div>

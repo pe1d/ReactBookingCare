@@ -1,0 +1,150 @@
+
+// reset slick slider
+.slick-prev { 
+    height: 55px !important;
+    width: 50px !important;
+    z-index: 10;
+    margin-left: 20px !important;
+    background: #45c3d2 !important;
+    opacity: 0.7;
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.slick-next {
+    height: 55px !important;
+    width: 50px !important;
+    z-index: 10;
+    margin-right: 20px !important;
+    background: #45c3d2 !important;
+    opacity: 0.7;
+    &:hover{
+        opacity: 1;
+    }
+}  
+
+.section-share{
+    &.section-specialty{
+        background: #f3f3f3;
+    }
+    &.section-doctor-week{
+        background: #f3f3f3;
+    }
+    &.section-about{
+        background: #f3f3f3;
+        height: 450px !important;
+        padding:0 200px;    
+    }
+    .section-body{
+        // border: 1px solid black;
+        height: auto;
+        .section-custom{
+            .bg-image{
+                height: 191px ;
+                width: 354px;
+                background-color: #eee;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 10px;
+                cursor: pointer;
+                &.img-specialty{
+                    background-image: url('../../assets/specialty/co-xuong-khop.png');
+                }
+                &.section-medical{
+                    background-image: url('../../assets/medical-facility/logo-thucuc.png');
+                }
+                &.section-doctor-week{
+                    background-image: url('../../assets/doctor-week/doctor-check.jpg');
+                    height: 120px;
+                    width: 120px;
+                    border-radius: 50%;
+                }
+                &.section-handbook{
+                    background-image: url('../../assets/handbook/congdongtinhthan.jpeg');
+                    
+                }
+            }
+            .title-img{
+                font-size: 18px;
+                &:hover{
+                    color: blue;
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+}
+.section-doctor-week{
+    .outer-bg{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .section-custom{
+        .custom-border{
+            border: 2px solid #ceb8b8;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+    }
+}
+
+.section-share{
+    height: 350px;
+    .section-container{
+        align-items: center;
+        margin: 0px 200px;
+        .section-header{
+            height: 60px;
+            margin-bottom: 30px;
+            padding-top: 30px;
+            .title-section{
+                font-size: 30px;
+                font-weight: 600;
+            }
+            .btn-section{
+                float: right;
+                padding: 10px;
+                border: none;
+                display: block;
+                background: #ebebeb;
+                text-transform: uppercase;
+                &:hover{
+                    background: orange;
+                }
+            }
+        }
+    }
+}
+
+.home-footer{
+    text-align: center;
+    padding-top: 8px;
+    a{
+        text-decoration: none;
+    }
+}
+.section-about{
+    .section-about-header{
+        font-size: 30px;
+        font-weight: 600;
+        padding: 20px 10px;
+        text-align: center;
+    }
+    .section-about-content{
+        display: flex;
+        align-items: center;
+        .content-left{
+            width: 40%;
+        }
+        .content-right{
+            width: 60%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

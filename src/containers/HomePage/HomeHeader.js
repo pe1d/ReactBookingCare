@@ -84,15 +84,15 @@ class HomeHeader extends Component {
                                 <div className='text-child'><FormattedMessage id='home-banner.genaral-exam' /></div>
                             </div>
                             <div className='option-child'>
-                                <div className='icon-child '><i class="fas fa-stethoscope"></i></div>
+                                <div className='icon-child '><i className="fas fa-stethoscope"></i></div>
                                 <div className='text-child'><FormattedMessage id='home-banner.medical-test' /></div>
                             </div>
                             <div className='option-child'>
-                                <div className='icon-child '><i class="fas fa-user-md"></i></div>
+                                <div className='icon-child '><i className="fas fa-user-md"></i></div>
                                 <div className='text-child'><FormattedMessage id='home-banner.mental-health' /></div>
                             </div>
                             <div className='option-child'>
-                                <div className='icon-child '><i class="fas fa-syringe"></i></div>
+                                <div className='icon-child '><i className="fas fa-syringe"></i></div>
                                 <div className='text-child'><FormattedMessage id='home-banner.dental-exam' /></div>
                             </div>
                         </div>

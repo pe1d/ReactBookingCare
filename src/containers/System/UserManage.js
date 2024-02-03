@@ -118,51 +118,53 @@ class UserManage extends Component {
                     <div style={{ textAlign: 'center' }}>
                         <h2>Users table</h2>
                     </div>
-                    <div>
-                        <button className='mx-1 btn btn-primary w-10 px-5'
-                            onClick={() => this.handlOnClickCreate()}>
-                            <i class="fas fa-plus"></i> Create new
-                        </button>
+                    <div className='container'>
+                        <div>
+                            <button className='mx-1 btn btn-primary w-10 px-5'
+                                onClick={() => this.handlOnClickCreate()}>
+                                <i className="fas fa-plus"></i> Create new
+                            </button>
+                        </div>
+                        <table className="table table-striped w-100">
+                            <thead>
+                                <tr>
+                                    <th scope="col-">#</th>
+                                    <th scope="col-sm">Email</th>
+                                    <th scope="col-sm">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {arrUsers && arrUsers.map((item, index) => {
+                                    return (
+                                        <tr>
+                                            <td>
+                                                {index + 1}
+                                            </td>
+                                            <td>
+                                                {item.email}
+                                            </td>
+                                            <td>
+                                                {item.firstName}
+                                            </td>
+                                            <td>
+                                                {item.lastName}
+                                            </td>
+                                            <td>
+                                                {item.address}
+                                            </td>
+                                            <td>
+                                                <button type="button" className="btn btn-primary mx-1 " onClick={() => this.handleOnClickUpdate(item)}>Update</button>
+                                                <button type="button" className="btn btn-danger mx-1 s" onClick={() => this.handleOnClickDel(item)}>Delete</button>
+                                            </td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
                     </div>
-                    <table className="table table-striped w-100">
-                        <thead>
-                            <tr>
-                                <th scope="col-">#</th>
-                                <th scope="col-sm">Email</th>
-                                <th scope="col-sm">First Name</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {arrUsers && arrUsers.map((item, index) => {
-                                return (
-                                    <tr>
-                                        <td>
-                                            {index + 1}
-                                        </td>
-                                        <td>
-                                            {item.email}
-                                        </td>
-                                        <td>
-                                            {item.firstName}
-                                        </td>
-                                        <td>
-                                            {item.lastName}
-                                        </td>
-                                        <td>
-                                            {item.address}
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary mx-1 w-25" onClick={() => this.handleOnClickUpdate(item)}>Update</button>
-                                            <button type="button" class="btn btn-danger mx-1 w-25" onClick={() => this.handleOnClickDel(item)}>Delete</button>
-                                        </td>
-                                    </tr>
-                                )
-                            })}
-                        </tbody>
-                    </table>
                 </div >
             </>
         );
