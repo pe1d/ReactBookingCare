@@ -23,6 +23,9 @@
         opacity: 1;
     }
 }  
+.slick-disabled{
+    display: none !important;
+}
 
 .section-share{
     &.section-specialty{
@@ -56,7 +59,7 @@
                     background-image: url('../../assets/medical-facility/logo-thucuc.png');
                 }
                 &.section-doctor-week{
-                    background-image: url('../../assets/doctor-week/doctor-check.jpg');
+                    // background-image: url('../../assets/doctor-week/doctor-check.jpg');
                     height: 120px;
                     width: 120px;
                     border-radius: 50%;

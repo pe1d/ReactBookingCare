@@ -3,6 +3,21 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './TableUsermanage.scss'
 import * as actions from '../../../store/actions'
+import MarkdownIt from 'markdown-it';
+import MdEditor from 'react-markdown-editor-lite';
+// import style manually
+import 'react-markdown-editor-lite/lib/index.css';
+
+// Register plugins if required
+// MdEditor.use(YOUR_PLUGINS_HERE);
+
+// Initialize a markdown parser
+const mdParser = new MarkdownIt(/* Markdown-it options */);
+
+// Finish!
+function handleEditorChange({ html, text }) {
+    console.log('handleEditorChange', html, text);
+}
 
 
 class TableUsermanage extends Component {
@@ -25,6 +40,9 @@ class TableUsermanage extends Component {
     }
     handleDeleteUser = (data) => {
         this.props.deleteUser(data)
+    }
+    handleEditUser = (user) => {
+        this.props.handleEditUserfromParent(user)
     }
     render() {
         let { userRedux } = this.state;
@@ -63,7 +81,9 @@ class TableUsermanage extends Component {
                                                 {item.address}
                                             </td>
                                             <td>
-                                                <button type="button" className="btn btn-primary mx-1 " >Update</button>
+                                                <button type="button" className="btn btn-primary mx-1 "
+                                                    onClick={() => this.handleEditUser(item)}
+                                                >Update</button>
                                                 <button type="button" className="btn btn-danger mx-1 s"
                                                     onClick={() => this.handleDeleteUser(item)}
                                                 >Delete</button>
@@ -74,6 +94,7 @@ class TableUsermanage extends Component {
                             }
                         </tbody>
                     </table>
+                    <MdEditor style={{ height: '500px' }} renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} />
                 </div >
             </>
         )

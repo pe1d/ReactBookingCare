@@ -13,16 +13,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Home from '../../routes/Home';
 class HomePage extends Component {
-
+    handleAfterChange = (event, slick, currentSlide) => {
+        console.log('Check slide: ', currentSlide);
+    }
     render() {
         let settings = {
             dots: false,
-            infinite: true,
+            infinite: false,
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 1,
             // nextArrow: <SampleNextArrow />,
             // prevArrow: <SamplePrevArrow />
+            // afterChange: this.handleAfterChange(),
         };
         return (
             <>

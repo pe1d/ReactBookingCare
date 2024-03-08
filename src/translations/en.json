@@ -12,7 +12,7 @@
         "welcome": "Welcome"
     },
     "home-banner": {
-        "medical-foundation": "Medical foundation",
+        "medical-foundation": "Medical platform",
         "health-care": "COMPREHENSIVE HEALTH CARE",
         "search-specialty": "Find a medical specialist",
         "specialty-exam": "Specialized examination",
@@ -49,6 +49,13 @@
         "role": "Role",
         "position": "Position",
         "save": "Save user",
-        "image": "Avatar"
+        "image": "Avatar",
+        "edit": "Save changes",
+        "unedit": "Cancel edit",
+        "unsave": "Cancel save"
+    },
+    "home-page": {
+        "doctor-week": "Outstanding doctors",
+        "more": "More"
     }
 }

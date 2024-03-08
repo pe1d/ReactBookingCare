@@ -48,7 +48,14 @@
         "gender": "Giới tính",
         "role": "Vai trò",
         "position": "Chức danh",
-        "save": "Lưu người dùng",
-        "image": "Ảnh đại diện"
+        "save": "Tạo người dùng",
+        "image": "Ảnh đại diện",
+        "edit": "Lưu thay đổi",
+        "unedit": "Hủy thay đổi",
+        "unsave": "Hủy tạo mới"
+    },
+    "home-page": {
+        "doctor-week": "Bác sĩ nổi bật tuần qua",
+        "more": "Xem thêm"
     }
 }
