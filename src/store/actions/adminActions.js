@@ -1,5 +1,9 @@
 import actionTypes from './actionTypes';
-import { getAllCodeApi, createUser, getAllUser, delUser, editUserApi, getTopDoctorHomeFromDB } from '../../services/userService';
+import {
+    getAllCodeApi, createUser, getAllUser, delUser, editUserApi,
+    getTopDoctorHomeFromDB, getAllDoctorFromDB, createInfoDoctorFromDB,
+    getInfoDoctorFromDB
+} from '../../services/userService';
 import { ToastContainer, toast } from 'react-toastify';
 //-----------------GENDER
 export const fetchGenderStart = () => {
@@ -198,4 +202,78 @@ export const fetchTopDoctorSuccess = (data) => ({
 })
 export const fetchTopDoctorFail = () => ({
     type: actionTypes.FETCH_TOP_DOCTOR_FAIL,
+})
+//--------------All-Edit-Doctor
+export const fetchAllDoctor = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllDoctorFromDB()
+            // console.log("Check res: ", res);
+            if (res && res.errCode == 0) {
+                dispatch(fetchAllDoctorSuccess(res.data))
+            } else {
+                dispatch(fetchAllDoctorFail())
+            }
+        } catch (e) {
+            console.log("fetchTopDoctorFail: ", e);
+            dispatch(fetchAllDoctorFail())
+        }
+    }
+}
+export const fetchAllDoctorSuccess = (data) => ({
+    type: actionTypes.FETCH_EDITDES_DOCTOR_SUCCESS,
+    data: data
+})
+export const fetchAllDoctorFail = () => ({
+    type: actionTypes.FETCH_EDITDES_DOCTOR_FAIL,
+})
+//--------------Save-info-doctor
+export const saveInfoDoctor = (data) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await createInfoDoctorFromDB(data)
+            console.log("Check res: ", res);
+            if (res && res.errCode == 0) {
+                toast.success('Create info doctor success!')
+                dispatch(saveInfoDoctorSuccess())
+            } else {
+                toast.error('Create info doctor fail.!')
+                dispatch(saveInfoDoctorFail())
+            }
+        } catch (e) {
+            toast.error('Create info doctor fail!')
+            console.log("saveInfoDoctorFail: ", e);
+            dispatch(saveInfoDoctorFail())
+        }
+    }
+}
+export const saveInfoDoctorSuccess = () => ({
+    type: actionTypes.SAVE_INFO_DOCTOR_SUCCESS,
+})
+export const saveInfoDoctorFail = () => ({
+    type: actionTypes.SAVE_INFO_DOCTOR_FAIL,
+})
+//-------------Get-info-doctor
+export const fetchInfoDoctor = (id) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getInfoDoctorFromDB(id)
+            // console.log("Check res: ", res);
+            if (res && res.errCode == 0) {
+                dispatch(fetchInfoDoctorSuccess(res.data))
+            } else {
+                dispatch(fetchInfoDoctorFail())
+            }
+        } catch (e) {
+            console.log("fetchTopDoctorFail: ", e);
+            dispatch(fetchInfoDoctorFail())
+        }
+    }
+}
+export const fetchInfoDoctorSuccess = (data) => ({
+    type: actionTypes.FETCH_INFO_DOCTOR_SUCCESS,
+    data: data
+})
+export const fetchInfoDoctorFail = () => ({
+    type: actionTypes.FETCH_INFO_DOCTOR_FAIL,
 })

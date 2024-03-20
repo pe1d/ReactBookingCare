@@ -31,4 +31,17 @@ const getAllCodeApi = (inputType) => {
 const getTopDoctorHomeFromDB = (limit) => {
     return axios.get(`api/top-doctor-home?limit=${limit}`)
 }
-export { handleLoginApi, getAllUser, createUser, delUser, editUserApi, getAllCodeApi, getTopDoctorHomeFromDB };
+const getAllDoctorFromDB = () => {
+    return axios.get('/api/all-doctor-edit-des')
+}
+const createInfoDoctorFromDB = (data) => {
+    return axios.post("/api/save-info-edit-des", data)
+}
+const getInfoDoctorFromDB = (id) => {
+    return axios.get(`/api/get-doctor-info-by-id?id=${id}`)
+}
+export {
+    handleLoginApi, getAllUser, createUser, delUser,
+    editUserApi, getAllCodeApi, getTopDoctorHomeFromDB,
+    getAllDoctorFromDB, createInfoDoctorFromDB, getInfoDoctorFromDB
+};

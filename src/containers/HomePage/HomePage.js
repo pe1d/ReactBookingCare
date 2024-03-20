@@ -12,6 +12,7 @@ import './HomePage.scss'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Home from '../../routes/Home';
+import HomeBanner from './HomeBanner';
 class HomePage extends Component {
     handleAfterChange = (event, slick, currentSlide) => {
         console.log('Check slide: ', currentSlide);
@@ -30,6 +31,7 @@ class HomePage extends Component {
         return (
             <>
                 <HomeHeader />
+                <HomeBanner />
                 <Specialty
                     settings={settings} />
                 <MedicalFacility

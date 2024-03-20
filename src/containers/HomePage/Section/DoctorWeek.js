@@ -4,7 +4,10 @@ import Slider from "react-slick";
 import * as actions from "../../../store/actions"
 import { LANGUAGES } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
+import { Redirect, withRouter } from 'react-router';
+
 class DoctorWeek extends Component {
+
     constructor(props) {
         super(props)
         this.state = {
@@ -24,7 +27,11 @@ class DoctorWeek extends Component {
     componentDidMount() {
         this.props.loadTopDoctor();
     }
-
+    handleClickInfoDoctor = (doctorInfo) => {
+        // return <Redirect to={`/home/doctor-info/${doctorInfo.id}`}></Redirect>
+        this.props.history.push(`/home/doctor-info/${doctorInfo.id}`)
+        // alert("Check " + doctorInfo.id)
+    }
     render() {
         let arrDoctor = this.state.arrDoctor
         let lang = this.props.lang
@@ -48,16 +55,15 @@ class DoctorWeek extends Component {
                                         }
                                         return (
                                             <div className='section-custom' key={index}>
-                                                <div className='custom-border'>
+                                                <div className='custom-border' >
                                                     <div className='outer-bg'>
                                                         <div className='bg-image section-doctor-week'
                                                             style={{ backgroundImage: `url(${imgBase64})` }}
                                                         >
                                                         </div>
                                                     </div>
-                                                    <div className='title-img text-center'>
+                                                    <div className='title-img text-center' onClick={() => this.handleClickInfoDoctor(item)}>
                                                         <div>
-
                                                             {lang && lang == LANGUAGES.VI ? item.positionData.valueVi : item.positionData.valueEn}, {item.firstName} {item.lastName}
                                                         </div>
                                                         <div>Cơ xương khớp 1</div>
@@ -91,4 +97,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DoctorWeek);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DoctorWeek));
