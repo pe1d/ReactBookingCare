@@ -5,6 +5,7 @@ export const path = {
     LOG_OUT: '/logout',
     SYSTEM: '/system',
     INFO_DOCTOR: '/home/doctor-info/:id',
+    DOCTOR: '/doctor'
 };
 
 export const LANGUAGES = {
@@ -17,7 +18,11 @@ export const CRUDactions = {
     EDIT: "EDIT",
     READ: "READ"
 };
-
+export const User_Role = {
+    ADMIN: 'R1',
+    DOCTOR: 'R2',
+    PATIENT: 'R3'
+};
 export const dateFormat = {
     SEND_TO_SERVER: 'DD/MM/YYYY'
 };

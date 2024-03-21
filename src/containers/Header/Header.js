@@ -1,16 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { LANGUAGES } from '../../utils'
+import { LANGUAGES, User_Role } from '../../utils'
 import * as actions from "../../store/actions";
 import Navigator from '../../components/Navigator';
-import { adminMenu } from './menuApp';
+import { adminMenu, doctorMenu } from './menuApp';
 import { FormattedMessage } from 'react-intl';
+import _ from 'lodash';
 import './Header.scss';
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            menuApp: []
+        }
+    }
     changeLanguage = (language) => {
         //fire redux event : actions
         this.props.changeLanguageAppRedux(language)
+    }
+    componentDidMount() {
+        console.log(this.props.userInfo);
+        let { userInfo } = this.props;
+        let menuApp = [];
+        if (userInfo && !_.isEmpty(userInfo)) {
+            let role = this.props.userInfo.roleId;
+            if (role === User_Role.ADMIN) {
+                menuApp = adminMenu;
+            }
+            if (role === User_Role.DOCTOR) {
+                menuApp = doctorMenu;
+            }
+        }
+        this.setState({
+            menuApp: menuApp
+        })
     }
     render() {
         const { processLogout, userInfo, language } = this.props;
@@ -18,7 +42,7 @@ class Header extends Component {
             <div className="header-container">
                 {/* thanh navigator */}
                 <div className="header-tabs-container">
-                    <Navigator menus={adminMenu} />
+                    <Navigator menus={this.state.menuApp} />
                 </div>
                 <div className='languages'>
                     <div className='welcome'>{<FormattedMessage id="homeheader.welcome" />}, <></>
