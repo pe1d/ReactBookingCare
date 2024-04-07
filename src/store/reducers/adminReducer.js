@@ -11,6 +11,7 @@ const initialState = {
     topDoctors: [],
     allDoctors: [],
     infoDoctor: {},
+    scheduleTime: [],
 }
 
 const adminReducer = (state = initialState, action) => {
@@ -98,6 +99,18 @@ const adminReducer = (state = initialState, action) => {
                 ...state
             }
         case actionTypes.FETCH_INFO_DOCTOR_FAIL:
+            return {
+                ...state
+            }
+        //Code-Time
+        case actionTypes.FETCH_ALLCODE_TIME_HOUR_SUCCESS:
+
+            state.scheduleTime = action.data;
+            // console.log('Check data by me:', state.infoDoctor);
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_ALLCODE_TIME_HOUR_FAIL:
             return {
                 ...state
             }

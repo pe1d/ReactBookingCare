@@ -1,0 +1,30 @@
+.doctor-schedule-container{
+    .all-schedule{
+        select{
+            font-size: 800;
+            // font-weight: 600;
+        }
+    }
+    .all-time-schedule{
+        .text-calender{
+            margin: 10px 0px;
+            span{
+                text-transform: uppercase;
+            }
+        }
+        .time-schedule-content{
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            button {
+                // padding: 5px 10px;
+                min-width: 152px;
+                &:hover{
+                    background-color: bisque;
+                    border: none;
+                }
+            }
+        }
+
+    }
+}

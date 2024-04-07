@@ -48,6 +48,11 @@ class Login extends Component {
             }
         }
     }
+    handlekeydown = (event) => {
+        if (event.key === "Enter") {
+            this.handleLogin()
+        }
+    }
     render() {
 
         return (
@@ -66,9 +71,12 @@ class Login extends Component {
                                     <label className="form-label">Email address</label>
                                 </div>
                                 <div className="col-12 form-group login-input">
-                                    <input value={this.state.password} onChange={(event) => this.handleOnChangeInput(event)}
+                                    <input value={this.state.password}
+                                        onChange={(event) => this.handleOnChangeInput(event)}
                                         name='password'
-                                        type="password" className="form-control" placeholder='Enter your password' />
+                                        type="password" className="form-control" placeholder='Enter your password'
+                                        onKeyDown={(event) => this.handlekeydown(event)}
+                                    />
                                     <label className="form-label">Password</label>
                                 </div>
                                 <div className='col-12' style={{ color: 'red' }}>

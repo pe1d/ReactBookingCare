@@ -1,32 +1,61 @@
 .container-info-doctor{
-    // border: 1px solid red;
-    height: auto;
-    margin: 0px auto;
-    display: flex;
-    align-items: center;
     margin-top: 20px;
-    padding: 10px 300px;
-    .img-info-doctor{
+    
+    .intro-doctor{
         // border: 1px solid red;
-        width: 150px;
-        height: 150px;
-        margin: 20px ;
-        border-radius: 50%;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .des-info-doctor{
-        height: 150px;
-        width: 500px;
+        height: auto;
+        margin: 0px auto;
         display: flex;
-        flex-direction: column;
-        justify-content: center;    
-        .des-location{
-            // font-size: 16px;
+        align-items: center;
+        padding: 10px 300px;
+        .img-info-doctor{
+            // border: 1px solid red;
+            width: 150px;
+            height: 150px;
+            margin: 20px ;
+            border-radius: 50%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .des-info-doctor{
+            height: 150px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;    
+            .des-location{
+                font-size: 14px;
+                padding-top: 10px;
+            }
         }
     }
+    .schedule-doctor{
+        margin: 0px auto;
+        height: auto;
+        // border: 1px solid red;
+        padding: 10px 300px;
+        .content-left{
+            padding-right:10px ;
+            max-width: 55%;
+            min-width: 20%;
+            border-right: 1px solid #cccccc;
+            height: auto;
+            min-height: 150px;
+            margin: 10px;
+        }
+        .content-right{
+            width: 45%;
+        }
+    }
+    .detail-doctor{
+        align-items: center;
+        margin: 0px auto;
+        padding: 10px 300px;
+    }
+    
 }
+
 .color-background{
     border-top: 1px solid #cccccc;
     background-color: #f9f9f9;

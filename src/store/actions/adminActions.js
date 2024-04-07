@@ -277,3 +277,27 @@ export const fetchInfoDoctorSuccess = (data) => ({
 export const fetchInfoDoctorFail = () => ({
     type: actionTypes.FETCH_INFO_DOCTOR_FAIL,
 })
+//-----------
+export const fetchAllCodeTime = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllCodeApi('TIME')
+            // console.log("Check res: ", res);
+            if (res && res.errCode == 0) {
+                dispatch(fetchAllCodeTimeSuccess(res.data))
+            } else {
+                dispatch(fetchAllCodeTimeFail())
+            }
+        } catch (e) {
+            console.log("fetchAllCodeTimeFail: ", e);
+            dispatch(fetchAllCodeTimeFail())
+        }
+    }
+}
+export const fetchAllCodeTimeSuccess = (data) => ({
+    type: actionTypes.FETCH_ALLCODE_TIME_HOUR_SUCCESS,
+    data: data
+})
+export const fetchAllCodeTimeFail = () => ({
+    type: actionTypes.FETCH_ALLCODE_TIME_HOUR_FAIL,
+})

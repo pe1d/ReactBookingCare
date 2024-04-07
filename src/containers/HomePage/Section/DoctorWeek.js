@@ -15,12 +15,10 @@ class DoctorWeek extends Component {
         }
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('check', this.props.topDoctor)
+        // console.log('check', this.props.topDoctor)
         if (prevProps.topDoctor !== this.props.topDoctor) {
             this.setState({
                 arrDoctor: this.props.topDoctor,
-            }, () => {
-                console.log('check state:', this.state);
             })
         }
     }
@@ -35,8 +33,8 @@ class DoctorWeek extends Component {
     render() {
         let arrDoctor = this.state.arrDoctor
         let lang = this.props.lang
-        console.log('check data: ', this.state);
-        console.log(this.props.topDoctor);
+        // console.log('check data: ', this.state);
+        // console.log(this.props.topDoctor);
         return (
             <>
                 <div className='section-share section-doctor-week'>

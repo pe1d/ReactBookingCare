@@ -40,8 +40,15 @@ const createInfoDoctorFromDB = (data) => {
 const getInfoDoctorFromDB = (id) => {
     return axios.get(`/api/get-doctor-info-by-id?id=${id}`)
 }
+const saveSchedule = (data) => {
+    return axios.post(`/api/bulk-create-schedule`, data)
+}
+const getSchedule = (id, date) => {
+    return axios.get(`/api/get-schedule-by-doctor-id-by-date?id=${id}&date=${date}`)
+}
 export {
     handleLoginApi, getAllUser, createUser, delUser,
     editUserApi, getAllCodeApi, getTopDoctorHomeFromDB,
-    getAllDoctorFromDB, createInfoDoctorFromDB, getInfoDoctorFromDB
+    getAllDoctorFromDB, createInfoDoctorFromDB, getInfoDoctorFromDB,
+    saveSchedule, getSchedule
 };
